@@ -43,3 +43,31 @@ $(document).ready(function() {
       });
     }
     Updaterforhour();
+
+    LoadedPlanData = localStorage.getItem("planData");
+
+    if (LoadedPlanData){
+     planData = JSON.parse( LoadedPlanData)
+    }
+    
+    for (let i = 7; i <= 17; i++) {
+   
+     $('#hour-' + i +' .description').val(planData['t' + i]); 
+   }
+ 
+   dayjs().format('DD/MM/YYYY')
+ });
+ 
+ 
+ for (let i = 7; i <= 17; i++) {
+  
+   if ( i == hour) { 
+     $('#hour-' + i).addClass("present"); 
+   }
+   else if (i > hour) {
+     $('#hour-' + i).addClass("future"); 
+   }
+   else if (i < hour) {
+     $('#hour-' + i).addClass("past");  
+   }
+ }
