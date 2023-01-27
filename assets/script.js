@@ -19,4 +19,27 @@ $(document).ready(function() {
     localStorage.setItem("planData", JSON.stringify(planData));
   });
     
- 
+  function Updaterforhour() {
+
+    
+    let currentHour = dayjs().hour();
+    console.log(currentHour);
+     
+      // Create a jQuery loop over all time blocks
+      $(".time-block").each(function() {
+        var blocktime = parseInt($(this).attr("id").split("-")[1]);
+  
+        
+        if (blocktime < currentHour) {
+          // Hours on calendar taking place before current hour of day, rows will appear grey as determined by class "past"
+          $(this).addClass("past");
+          // If current hour is the same as that of calendar, row will appear greenas determined by class "present"--removing "past"
+        } else if (blocktime === currentHour) {
+          $(this).removeClass("past").addClass("present");
+          // Hours on calendar taking place after current hour of day, row will appear green as determined by class "future"--removing "past" and "present"
+        } else {
+          $(this).removeClass("past present").addClass("future");
+        }
+      });
+    }
+    Updaterforhour();
