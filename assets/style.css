@@ -24,12 +24,12 @@ textarea {
 }
 
 .row {
-  border-top: 1px solid white;
+  border-top: 1px solid rgb(255, 238, 0);
 }
 
 .hour {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #06b315;
+  color: #500606;
   border-top: 1px dashed #000000;
 }
 
@@ -53,8 +53,8 @@ textarea {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06aed5;
-  color: white;
+  background-color: #d50606;
+  color: rgb(255, 230, 0);
 }
 
 .saveBtn i:hover {
@@ -64,9 +64,14 @@ textarea {
 
 h1{
   text-align: center;
+  
 }
 
 p{
   text-align: center;
   
+}
+
+.header {
+  background-color: orange;
 }
